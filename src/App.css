@@ -1,0 +1,142 @@
+/* src/App.css */
+
+.app {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px 32px;
+    border-radius: 4px;
+}
+
+/* ===== Заголовок ===== */
+.header {
+    margin-bottom: 32px;
+}
+
+.header__title {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.header__subtitle {
+    font-size: 16px;
+    color: #444;
+}
+
+/* ===== Фильтры (Flex) ===== */
+.filters {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #e5e5e5;
+    flex-wrap: wrap;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1 1 260px;
+    max-width: 340px;
+}
+
+.field__label {
+    font-size: 14px;
+    color: #333;
+}
+
+.field__input,
+.field__select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    background: #ffffff;
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.field__input:focus,
+.field__select:focus {
+    border-color: #1f7a8c;
+}
+
+.field__input::placeholder {
+    color: #b0b0b0;
+}
+
+/* ===== Сетка карточек (Grid) — 2 колонки ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+/* ===== Карточка (Flex) ===== */
+.card {
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Фото с пропорциями 334×192 из макета */
+.card__image {
+    width: 100%;
+    aspect-ratio: 334 / 192;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    background: #d0d0d0;
+}
+
+.card__body {
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card__name {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.card__info {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 13px;
+    color: #333;
+}
+
+.card__info b {
+    font-weight: 600;
+    color: #111;
+}
+
+/* ===== Адаптивность ===== */
+@media (max-width: 640px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .header__title {
+        font-size: 32px;
+    }
+    .app {
+        padding: 24px 16px;
+    }
+}
